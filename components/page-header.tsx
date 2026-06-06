@@ -6,7 +6,13 @@ type PageKey = 'menu' | 'order' | 'reservation' | 'contact'
 
 export function PageHeader({ page }: { page: PageKey }) {
   const { t } = useLanguage()
-  const { title, subtitle } = t.pages[page]
+
+  const pageData = t.pages?.[page] ?? {
+    title: '',
+    subtitle: '',
+  }
+
+  const { title, subtitle } = pageData
 
   return (
     <section className="border-b border-border/60 bg-sidebar text-sidebar-foreground">
@@ -14,6 +20,7 @@ export function PageHeader({ page }: { page: PageKey }) {
         <h1 className="text-balance font-heading text-3xl font-extrabold md:text-4xl">
           {title}
         </h1>
+
         {subtitle && (
           <p className="mx-auto mt-3 max-w-2xl text-pretty leading-relaxed text-sidebar-foreground/70">
             {subtitle}
