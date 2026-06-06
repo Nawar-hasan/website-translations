@@ -29,10 +29,7 @@ const infoCards = [
 export default function ContactPage() {
   return (
     <>
-      <PageHeader
-        title="معلومات المطعم"
-        subtitle="نحن هنا لخدمتك. تواصل معنا أو زرنا في موقعنا للاستمتاع بتجربة فاخرة."
-      />
+      <PageHeader page="contact" />
 
       {/* قصة المطعم */}
       <section className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:px-6">
